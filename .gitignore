@@ -1,4 +1,4 @@
 .bundle/
 vendor/bundle/
 
-config.yml
+/config.yml
