@@ -4,7 +4,7 @@ default_run_options[:pty] = true
 ssh_options[:keys] = [File.join(ENV['HOME'], '.ssh', 'id_rsa')]
 
 set :user, $config[:user]
-set :password, $config[:password]
+set :password, $config[:password] if $config.has_key?(:password)
 
 $config[:servers].each do |name, address|
   role name, address
