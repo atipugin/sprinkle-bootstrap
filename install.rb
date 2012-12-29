@@ -1,9 +1,11 @@
 require File.join(File.dirname(__FILE__), 'base')
 
-load_packages %w()
+packages = [:commons]
 
 policy :server, roles: :default do
-  # Add policy requirements here.
+  load_packages(packages)
+
+  packages.each { |p| requires p }
 end
 
 deployment { delivery :capistrano }
