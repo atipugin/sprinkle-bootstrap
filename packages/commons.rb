@@ -1,9 +1,7 @@
-require File.join(File.dirname(__FILE__), '../base')
-
-dependencies = [:essential, :git, :curl, :psp, :htop]
+packages = [:build_essential, :git, :curl, :python_software_properties, :htop]
 
 package :commons do
-  load_packages(dependencies)
+  load_packages(packages)
 
-  dependencies.each { |d| requires d }
+  packages.each { |p| requires p }
 end
