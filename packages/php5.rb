@@ -1,5 +1,5 @@
 package :php5 do
-  packages = %w(php5 php5-suhosin php5-dev php-pear)
+  packages = %w(php5 php5-suhosin php5-dev php-pear php5-mcrypt php5-xcache)
 
   apt packages
 
