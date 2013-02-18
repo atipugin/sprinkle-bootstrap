@@ -3,8 +3,9 @@ package :mysql, provides: :database do
 
   requires :python_software_properties
 
-  pre :install, ['add-apt-repository ppa:nathan-renniewaldock/ppa', 'apt-get update']
-  apt packages
+  apt packages do
+    pre :install, ['add-apt-repository ppa:nathan-renniewaldock/ppa', 'apt-get update']
+  end
 
   verify do
     packages.each { |p| has_apt p }
