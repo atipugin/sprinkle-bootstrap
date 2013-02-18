@@ -1,7 +1,9 @@
 package :php5 do
-  packages = %w(php5 php5-suhosin php5-dev php-pear php5-mcrypt php5-xcache)
+  packages = %w(php5 php5-dev php-pear php5-mcrypt php5-xcache)
 
-  apt packages
+  apt packages do
+    pre :install, ['add-apt-repository ppa:ondrej/php5', 'apt-get update']
+  end
 
   verify do
     packages.each { |p| has_apt p }
