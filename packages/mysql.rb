@@ -1,5 +1,5 @@
 package :mysql, provides: :database do
-  packages = %w(mysql-server mysql-client libmysqlclient-dev)
+  packages = %w(mysql-server-5.5 libmysqlclient-dev)
 
   requires :python_software_properties
 
