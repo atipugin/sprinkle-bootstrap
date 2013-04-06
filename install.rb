@@ -1,9 +1,9 @@
 require File.join(File.dirname(__FILE__), 'base')
 
-policy :server, roles: $config[:servers].keys do
-  packages = [:commons, :lamp, :nginx]
-
-  packages.each { |p| requires p }
+$config[:servers].each do |server, settings|
+  policy server, roles: server do
+    settings[:packages].map(&:to_sym).each { |p| requires p }
+  end
 end
 
 deployment { delivery :capistrano }

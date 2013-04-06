@@ -1,4 +1,8 @@
 user: atipugin
 password: secret # Remove this line if using ssh keys.
 servers:
-  default: 127.0.0.1
+  default:
+    addresses:
+      - 127.0.0.1
+    packages:
+      - commons
